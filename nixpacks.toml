@@ -1,8 +1,8 @@
 [phases.setup]
-nixPkgs = ["php81", "php81Packages.composer", "php81Extensions.mysqli", "php81Extensions.mbstring", "php81Extensions.intl", "php81Extensions.gd", "php81Extensions.curl", "apacheHttpd"]
+nixPkgs = ["php82", "php82Extensions.mysqli", "php82Extensions.mbstring", "php82Extensions.intl", "php82Extensions.gd", "php82Extensions.curl", "php82Extensions.tokenizer", "php82Extensions.pdo"]
 
 [phases.install]
-cmds = ["composer install --no-dev --optimize-autoloader"]
+cmds = ["php82Packages.composer/bin/composer install --no-dev --optimize-autoloader"]
 
 [start]
-cmd = "apache2 -D FOREGROUND"
+cmd = "php -S 0.0.0.0:$PORT -t public/"
