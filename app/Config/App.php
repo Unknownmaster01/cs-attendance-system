@@ -36,5 +36,5 @@ class App extends BaseConfig
     public bool $CSRFRegenerate = true;
     public bool $CSRFRedirect = false;
     public bool $CSRFSameSiteProtection = true;
-    public string $CSPEnabled = '';
+    public string $CSPEnabled = 'false';
 }
