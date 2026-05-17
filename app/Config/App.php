@@ -7,7 +7,7 @@ use CodeIgniter\Config\BaseConfig;
 class App extends BaseConfig
 {
     // Leave empty — CodeIgniter will auto-detect the URL from the request
-    public string $baseURL = '';
+    public string $baseURL = 'https://cs-attendance-system-production.up.railway.app/';
 
     public array $allowedHostnames = [];
 
