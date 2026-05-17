@@ -1,0 +1,168 @@
+CRITICAL - 2026-03-27 17:10:30 --> ErrorException: Undefined variable $avatarUrl
+[Method: GET, Route: student/dashboard]
+in APPPATH\Views\student_dashboard.php on line 138.
+ 1 APPPATH\Views\student_dashboard.php(138): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $avatarUrl', 'C:\\xampp\\htdocs\\system\\app\\Views\\student_dashboard.php', 138)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\system\\app\\Views\\student_dashboard.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('student_dashboard', [], true)
+ 5 APPPATH\Controllers\Student.php(44): view('student_dashboard', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Student->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-03-27 17:14:25 --> ErrorException: Undefined variable $avatarUrl
+[Method: GET, Route: student/dashboard]
+in APPPATH\Views\student_dashboard.php on line 154.
+ 1 APPPATH\Views\student_dashboard.php(154): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $avatarUrl', 'C:\\xampp\\htdocs\\system\\app\\Views\\student_dashboard.php', 154)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\system\\app\\Views\\student_dashboard.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('student_dashboard', [], true)
+ 5 APPPATH\Controllers\Student.php(44): view('student_dashboard', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Student->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-03-27 17:17:34 --> ErrorException: Undefined variable $avatarUrl
+[Method: GET, Route: student/dashboard]
+in APPPATH\Views\student_dashboard.php on line 150.
+ 1 APPPATH\Views\student_dashboard.php(150): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $avatarUrl', 'C:\\xampp\\htdocs\\system\\app\\Views\\student_dashboard.php', 150)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\system\\app\\Views\\student_dashboard.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('student_dashboard', [], true)
+ 5 APPPATH\Controllers\Student.php(44): view('student_dashboard', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Student->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-03-27 17:17:35 --> ErrorException: Undefined variable $avatarUrl
+[Method: GET, Route: student/dashboard]
+in APPPATH\Views\student_dashboard.php on line 150.
+ 1 APPPATH\Views\student_dashboard.php(150): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $avatarUrl', 'C:\\xampp\\htdocs\\system\\app\\Views\\student_dashboard.php', 150)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\system\\app\\Views\\student_dashboard.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('student_dashboard', [], true)
+ 5 APPPATH\Controllers\Student.php(44): view('student_dashboard', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Student->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-03-27 17:17:36 --> ErrorException: Undefined variable $avatarUrl
+[Method: GET, Route: student/dashboard]
+in APPPATH\Views\student_dashboard.php on line 150.
+ 1 APPPATH\Views\student_dashboard.php(150): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $avatarUrl', 'C:\\xampp\\htdocs\\system\\app\\Views\\student_dashboard.php', 150)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\system\\app\\Views\\student_dashboard.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('student_dashboard', [], true)
+ 5 APPPATH\Controllers\Student.php(44): view('student_dashboard', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Student->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-03-27 17:17:36 --> ErrorException: Undefined variable $avatarUrl
+[Method: GET, Route: student/dashboard]
+in APPPATH\Views\student_dashboard.php on line 150.
+ 1 APPPATH\Views\student_dashboard.php(150): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $avatarUrl', 'C:\\xampp\\htdocs\\system\\app\\Views\\student_dashboard.php', 150)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\system\\app\\Views\\student_dashboard.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('student_dashboard', [], true)
+ 5 APPPATH\Controllers\Student.php(44): view('student_dashboard', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Student->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-03-27 17:17:36 --> ErrorException: Undefined variable $avatarUrl
+[Method: GET, Route: student/dashboard]
+in APPPATH\Views\student_dashboard.php on line 150.
+ 1 APPPATH\Views\student_dashboard.php(150): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $avatarUrl', 'C:\\xampp\\htdocs\\system\\app\\Views\\student_dashboard.php', 150)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\system\\app\\Views\\student_dashboard.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('student_dashboard', [], true)
+ 5 APPPATH\Controllers\Student.php(44): view('student_dashboard', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Student->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-03-27 17:17:36 --> ErrorException: Undefined variable $avatarUrl
+[Method: GET, Route: student/dashboard]
+in APPPATH\Views\student_dashboard.php on line 150.
+ 1 APPPATH\Views\student_dashboard.php(150): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $avatarUrl', 'C:\\xampp\\htdocs\\system\\app\\Views\\student_dashboard.php', 150)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\system\\app\\Views\\student_dashboard.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('student_dashboard', [], true)
+ 5 APPPATH\Controllers\Student.php(44): view('student_dashboard', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Student->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-03-27 17:38:35 --> ErrorException: Undefined variable $avatarUrl
+[Method: GET, Route: student/dashboard]
+in APPPATH\Views\student_dashboard.php on line 116.
+ 1 APPPATH\Views\student_dashboard.php(116): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $avatarUrl', 'C:\\xampp\\htdocs\\system\\app\\Views\\student_dashboard.php', 116)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\system\\app\\Views\\student_dashboard.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('student_dashboard', [], true)
+ 5 APPPATH\Controllers\Student.php(44): view('student_dashboard', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Student->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-03-27 17:39:27 --> ErrorException: Undefined variable $avatarUrl
+[Method: GET, Route: student/dashboard]
+in APPPATH\Views\student_dashboard.php on line 116.
+ 1 APPPATH\Views\student_dashboard.php(116): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $avatarUrl', 'C:\\xampp\\htdocs\\system\\app\\Views\\student_dashboard.php', 116)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\system\\app\\Views\\student_dashboard.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('student_dashboard', [], true)
+ 5 APPPATH\Controllers\Student.php(44): view('student_dashboard', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Student->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-03-27 17:40:51 --> ErrorException: Undefined variable $avatarUrl
+[Method: GET, Route: student/dashboard]
+in APPPATH\Views\student_dashboard.php on line 116.
+ 1 APPPATH\Views\student_dashboard.php(116): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $avatarUrl', 'C:\\xampp\\htdocs\\system\\app\\Views\\student_dashboard.php', 116)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\system\\app\\Views\\student_dashboard.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('student_dashboard', [], true)
+ 5 APPPATH\Controllers\Student.php(44): view('student_dashboard', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Student->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-03-27 17:40:53 --> ErrorException: Undefined variable $avatarUrl
+[Method: GET, Route: student/dashboard]
+in APPPATH\Views\student_dashboard.php on line 116.
+ 1 APPPATH\Views\student_dashboard.php(116): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $avatarUrl', 'C:\\xampp\\htdocs\\system\\app\\Views\\student_dashboard.php', 116)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\system\\app\\Views\\student_dashboard.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('student_dashboard', [], true)
+ 5 APPPATH\Controllers\Student.php(44): view('student_dashboard', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Student->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
