@@ -186,7 +186,7 @@
     <div class="page-header">
         <div class="page-header-left">
             <h1 class="page-title">All Events</h1>
-            <p class="page-sub">Browse, filter, and manage OJT events.</p>
+            <p class="page-sub">Browse, filter, and manage Attendance events.</p>
         </div>
         <div class="page-header-right">
             <a href="<?= base_url('admin') ?>" class="btn-logout-admin" title="Back to Dashboard" style="text-decoration:none;padding:8px 16px;font-size:12.5px;display:inline-flex;align-items:center;gap:7px;border-radius:var(--r-md);">
@@ -315,7 +315,7 @@
             <form id="editEventForm" method="POST">
                 <div class="modal-header">
                     <div class="modal-header-icon"><i class="fas fa-calendar-pen"></i></div>
-                    <h5 class="modal-title">Edit OJT Event</h5>
+                    <h5 class="modal-title">Edit Attendance Event</h5>
                     <button type="button" class="btn-modal-close" data-bs-dismiss="modal">
                         <i class="fas fa-xmark"></i>
                     </button>

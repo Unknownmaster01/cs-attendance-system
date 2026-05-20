@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Panel | OJT System</title>
+    <title>Admin Panel | Attendance System</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -557,7 +557,7 @@
                     <div class="form-card-icon fci-blue"><i class="fas fa-plus-circle"></i></div>
                     <div>
                         <div class="form-card-title">Add New Event</div>
-                        <div class="form-card-sub">Schedule an OJT event</div>
+                        <div class="form-card-sub">Schedule an Event</div>
                     </div>
                 </div>
                 <div class="form-card-body">
@@ -565,7 +565,7 @@
                         <div class="form-group">
                             <label class="form-label">Event Title</label>
                             <input type="text" name="title" class="form-control"
-                                   placeholder="e.g. OJT Orientation" required>
+                                   placeholder="e.g. Event Orientation" required>
                         </div>
                         <div class="form-row-2">
                             <div class="form-group">
@@ -661,7 +661,7 @@
             <form id="editEventForm" method="POST">
                 <div class="modal-header">
                     <div class="modal-header-icon"><i class="fas fa-calendar-pen"></i></div>
-                    <h5 class="modal-title">Edit OJT Event</h5>
+                    <h5 class="modal-title">Edit Attendance Event</h5>
                     <button type="button" class="btn-modal-close" data-bs-dismiss="modal">
                         <i class="fas fa-xmark"></i>
                     </button>

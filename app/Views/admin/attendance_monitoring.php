@@ -163,7 +163,7 @@
                         <path d="M40 103 L26 110" stroke="white" stroke-width="4" stroke-linecap="round" opacity="0.9"/>
                         <path d="M60 103 L74 110" stroke="white" stroke-width="4" stroke-linecap="round" opacity="0.9"/>
                     </svg></div>
-        <span class="topbar-name">OJT Attendance Scanner</span>
+        <span class="topbar-name">Monitoring Attendance Scanner</span>
     </div>
     <div class="event-pill">
         <i class="fas fa-calendar-check"></i>
