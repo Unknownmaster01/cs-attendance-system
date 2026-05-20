@@ -17,24 +17,29 @@ class Admin extends Controller {
         $search = trim($this->request->getGet('search') ?? '');
 
         $eventModel = new EventModel();
-        $latestEvent = $eventModel->orderBy('start_event', 'DESC')->first();
+        $today = date('Y-m-d');
+        $latestEvent = $eventModel
+            ->where('DATE(start_event) <=', $today)
+            ->where('DATE(end_event) >=', $today)
+            ->orderBy('start_event', 'DESC')
+            ->first();
         $current_event_id = $latestEvent ? $latestEvent['id'] : 0;
 
-        // ✅ Count students
+        // Count students
         $student_count = $db->table('users')
                             ->where('role', 'student')
                             ->countAllResults();
 
-        // ✅ Count events this month
+        // Count events this month
         $event_count = $db->table('events')
                           ->where('MONTH(start_event)', date('m'))
                           ->where('YEAR(start_event)', date('Y'))
                           ->countAllResults();
 
-        // ✅ Count announcements
+        // Count announcements
         $announcement_count = $db->table('announcements')->countAllResults();
 
-        // ✅ Upcoming events for sidebar
+        // Upcoming events for sidebar
         $upcoming_events = $eventModel->orderBy('start_event', 'ASC')
                                       ->findAll(5);
 
@@ -79,7 +84,12 @@ class Admin extends Controller {
         }
 
         $eventModel = new EventModel();
-        $latestEvent = $eventModel->orderBy('start_event', 'DESC')->first();
+        $today = date('Y-m-d');
+        $latestEvent = $eventModel
+            ->where('DATE(start_event) <=', $today)
+            ->where('DATE(end_event) >=', $today)
+            ->orderBy('start_event', 'DESC')
+            ->first();
         $current_event_id = $latestEvent ? $latestEvent['id'] : 0;
 
         $attendance = null;
@@ -129,7 +139,7 @@ class Admin extends Controller {
         return view('admin/student_list', $data);
     }
 
-    // ✅ --- ATTENDANCE LOG (fixes the 404) ---
+    // --- ATTENDANCE LOG ---
     public function check_attendance() {
         if (!session()->get('isLoggedIn')) {
             return redirect()->to(base_url('login'));
@@ -137,13 +147,16 @@ class Admin extends Controller {
 
         $db = \Config\Database::connect();
         $eventModel = new EventModel();
-        $latestEvent = $eventModel->orderBy('start_event', 'DESC')->first();
+        $today = date('Y-m-d');
+        $latestEvent = $eventModel
+            ->where('DATE(start_event) <=', $today)
+            ->where('DATE(end_event) >=', $today)
+            ->orderBy('start_event', 'DESC')
+            ->first();
         $current_event_id = $latestEvent ? $latestEvent['id'] : 0;
 
-        // Get specific student search if coming from view_student History button
         $search = trim($this->request->getGet('search') ?? '');
 
-        // Join users with attendance for the latest event
         $builder = $db->table('users');
         $builder->select('users.id_number, users.full_name, users.course, users.year_level_id, users.profile_pic, attendance.time_in, attendance.time_out, attendance.status');
         $builder->join('attendance', "attendance.student_id = users.id_number AND attendance.event_id = $current_event_id", 'left');
@@ -175,7 +188,12 @@ class Admin extends Controller {
         $search = trim($this->request->getGet('search') ?? '');
 
         $eventModel = new EventModel();
-        $latestEvent = $eventModel->orderBy('start_event', 'DESC')->first();
+        $today = date('Y-m-d');
+        $latestEvent = $eventModel
+            ->where('DATE(start_event) <=', $today)
+            ->where('DATE(end_event) >=', $today)
+            ->orderBy('start_event', 'DESC')
+            ->first();
         $current_event_id = $latestEvent ? $latestEvent['id'] : 0;
 
         $student = null;
@@ -299,7 +317,7 @@ class Admin extends Controller {
         $db = \Config\Database::connect();
         $eventModel = new EventModel();
 
-        $filter = $this->request->getGet('filter') ?? 'all'; // all | month | upcoming | past
+        $filter = $this->request->getGet('filter') ?? 'all';
 
         $builder = $db->table('events')->orderBy('start_event', 'DESC');
 
@@ -370,6 +388,7 @@ class Admin extends Controller {
             return redirect()->back()->with('error', 'Failed to post.');
         }
     }
+
     // --- MARK ALL STUDENTS PRESENT ---
     public function mark_all_present() {
         if (!session()->get('isLoggedIn')) {
@@ -382,28 +401,30 @@ class Admin extends Controller {
         $eventModel = new EventModel();
         $attendanceModel = new \App\Models\AttendanceModel();
 
-        // 1. Get the current active event
-        $latestEvent = $eventModel->orderBy('start_event', 'DESC')->first();
+        $today = date('Y-m-d');
+        $latestEvent = $eventModel
+            ->where('DATE(start_event) <=', $today)
+            ->where('DATE(end_event) >=', $today)
+            ->orderBy('start_event', 'DESC')
+            ->first();
+
         if (!$latestEvent) {
-            return redirect()->back()->with('error', 'No active event found to mark attendance for.');
+            return redirect()->back()->with('error', 'No active event today to mark attendance for.');
         }
 
         $current_event_id = $latestEvent['id'];
 
-        // 2. Get all students
         $students = $db->table('users')->where('role', 'student')->get()->getResultArray();
 
         $currentTime = date('Y-m-d H:i:s');
         $currentDate = date('Y-m-d');
         $markedCount = 0;
 
-        // 3. Loop through students and mark them present if they aren't already
         foreach ($students as $student) {
             $record = $attendanceModel->where('student_id', $student['id_number'])
                                       ->where('event_id', $current_event_id)
                                       ->first();
 
-            // If no attendance record exists for this event, insert one
             if (!$record) {
                 $data = [
                     'student_id' => $student['id_number'],
@@ -417,73 +438,68 @@ class Admin extends Controller {
             }
         }
 
-        // 4. Return with success message
         if ($markedCount > 0) {
             return redirect()->back()->with('msg', "Successfully marked $markedCount student(s) as present for '" . $latestEvent['title'] . "'!");
         } else {
             return redirect()->back()->with('msg', 'All students are already marked present for this event.');
         }
     }
+
     // --- MARK ALL STUDENTS TIME OUT ---
-public function mark_all_timeout() {
-    if (!session()->get('isLoggedIn')) {
-        return redirect()->to(base_url('login'));
+    public function mark_all_timeout() {
+        if (!session()->get('isLoggedIn')) {
+            return redirect()->to(base_url('login'));
+        }
+
+        date_default_timezone_set('Asia/Manila'); 
+        
+        $eventModel = new EventModel();
+        $attendanceModel = new \App\Models\AttendanceModel();
+
+        $today = date('Y-m-d');
+        $latestEvent = $eventModel
+            ->where('DATE(start_event) <=', $today)
+            ->where('DATE(end_event) >=', $today)
+            ->orderBy('start_event', 'DESC')
+            ->first();
+
+        if (!$latestEvent) {
+            return redirect()->back()->with('error', 'No active event today to mark attendance for.');
+        }
+
+        $current_event_id = $latestEvent['id'];
+        $currentTime = date('Y-m-d H:i:s');
+        $markedCount = 0;
+
+        $recordsToUpdate = $attendanceModel->where('event_id', $current_event_id)
+                                           ->where('time_in IS NOT NULL')
+                                           ->where('time_out', null)
+                                           ->findAll();
+
+        foreach ($recordsToUpdate as $record) {
+            $attendanceModel->update($record['id'], ['time_out' => $currentTime]);
+            $markedCount++;
+        }
+
+        if ($markedCount > 0) {
+            return redirect()->back()->with('msg', "Successfully timed out $markedCount student(s)!");
+        } else {
+            return redirect()->back()->with('msg', 'All active students are already timed out or missing time-in.');
+        }
     }
 
-    date_default_timezone_set('Asia/Manila'); 
-    
-    $eventModel = new EventModel();
-    $attendanceModel = new \App\Models\AttendanceModel();
-
-    // 1. Get the current active event
-    $latestEvent = $eventModel->orderBy('start_event', 'DESC')->first();
-    if (!$latestEvent) {
-        return redirect()->back()->with('error', 'No active event found to mark attendance for.');
-    }
-
-    $current_event_id = $latestEvent['id'];
-    $currentTime = date('Y-m-d H:i:s');
-    $markedCount = 0;
-
-    // 2. Find all students currently timed-in but NOT timed-out for this event
-    $recordsToUpdate = $attendanceModel->where('event_id', $current_event_id)
-                                       ->where('time_in IS NOT NULL')
-                                       ->where('time_out', null)
-                                       ->findAll();
-
-    // 3. Update their records
-    foreach ($recordsToUpdate as $record) {
-        $attendanceModel->update($record['id'], ['time_out' => $currentTime]);
-        $markedCount++;
-    }
-
-    // 4. Return message
-    if ($markedCount > 0) {
-        return redirect()->back()->with('msg', "Successfully timed out $markedCount student(s)!");
-    } else {
-        return redirect()->back()->with('msg', 'All active students are already timed out or missing time-in.');
-    }
-}
-// --- DELETE EVENT ---
+    // --- DELETE EVENT ---
     public function delete_event($id) {
         if (!session()->get('isLoggedIn')) {
             return redirect()->to(base_url('login'));
         }
 
         $eventModel = new \App\Models\EventModel();
-        
-        // Add the AttendanceModel so we can delete the child records
         $attendanceModel = new \App\Models\AttendanceModel(); 
         
-        // Ensure the event exists before deleting
         if ($eventModel->find($id)) {
-            
-            // 1. Delete all attendance records tied to this event first
             $attendanceModel->where('event_id', $id)->delete();
-
-            // 2. Now it is safe to delete the parent event
             $eventModel->delete($id);
-            
             return redirect()->to(base_url('admin'))->with('msg', 'Event and associated attendance records deleted successfully!');
         } else {
             return redirect()->to(base_url('admin'))->with('error', 'Failed to delete: Event not found.');

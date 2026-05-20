@@ -70,6 +70,7 @@
         .status-present { background: var(--success-bg); color: var(--success-dark); }
         .status-absent  { background: var(--danger-bg); color: var(--danger-dark); }
         .status-partial { background: var(--warning-bg); color: var(--warning-dark); }
+        .status-no-event { background: #f1f3f5; color: #868e96; }
 
         .time-chip  { font-size: 12.5px; font-weight: 600; color: var(--text-main); display: inline-flex; align-items: center; gap: 5px; }
         .time-empty { font-size: 12px; color: #c8d2e8; }
@@ -97,12 +98,21 @@
             transition: filter var(--fast);
         }
         .btn-bulk:hover { filter: brightness(1.1); color: #fff; }
-        .btn-mark-in { background: #10b981; } /* success green */
-        .btn-mark-out { background: #f59e0b; } /* warning orange */
+        .btn-mark-in { background: #10b981; }
+        .btn-mark-out { background: #f59e0b; }
 
         .empty-state { padding: 60px 20px; text-align: center; color: var(--text-muted); }
         .empty-state i { font-size: 36px; opacity: 0.18; margin-bottom: 12px; display: block; }
         .empty-state p { font-size: 13.5px; }
+
+        /* No event banner */
+        .no-event-banner {
+            background: #fff8e1; border: 1.5px solid #ffe082;
+            border-radius: var(--r-xl); padding: 18px 22px;
+            display: flex; align-items: center; gap: 12px;
+            margin-bottom: 22px; color: #b45309; font-size: 13.5px; font-weight: 600;
+        }
+        .no-event-banner i { font-size: 20px; color: #f59e0b; flex-shrink: 0; }
 
         /* Event selector pill */
         .event-pill {
@@ -111,6 +121,10 @@
             border: 1.5px solid var(--primary-mid);
             border-radius: 20px; padding: 5px 14px;
             font-size: 12px; font-weight: 600;
+        }
+        .event-pill.no-event {
+            background: #fff3cd; color: #856404;
+            border-color: #ffc107;
         }
 
         /* Modal custom styling */
@@ -196,17 +210,19 @@
         </div>
         
         <div class="page-header-right header-actions">
-            <span class="event-pill">
+            <span class="event-pill <?= $current_event_id == 0 ? 'no-event' : '' ?>">
                 <i class="fas fa-calendar-check"></i>
                 <?= esc($event_name) ?>
             </span>
             
+            <?php if ($current_event_id > 0): ?>
             <button class="btn-bulk btn-mark-in" data-bs-toggle="modal" data-bs-target="#markAllInModal">
                 <i class="fas fa-sign-in-alt"></i> Mark All In
             </button>
             <button class="btn-bulk btn-mark-out" data-bs-toggle="modal" data-bs-target="#markAllOutModal">
                 <i class="fas fa-sign-out-alt"></i> Mark All Out
             </button>
+            <?php endif; ?>
             
             <a href="#" class="btn-export"><i class="fas fa-download"></i> Export CSV</a>
         </div>
@@ -220,6 +236,15 @@
     <?php if (session()->getFlashdata('error')): ?>
     <div class="flash-alert flash-danger">
         <i class="fas fa-exclamation-triangle"></i><?= session()->getFlashdata('error') ?>
+    </div>
+    <?php endif; ?>
+
+    <?php if ($current_event_id == 0): ?>
+    <div class="no-event-banner">
+        <i class="fas fa-calendar-times"></i>
+        <div>
+            <strong>No Active Event Today</strong> — There is no event scheduled for today. Attendance tracking is disabled. Go to <a href="<?= base_url('admin/events') ?>" style="color:#b45309;text-decoration:underline;">Events</a> to create one.
+        </div>
     </div>
     <?php endif; ?>
 
@@ -310,8 +335,10 @@
                                     <span class="status-badge status-present"><i class="fas fa-check"></i> Present</span>
                                 <?php elseif (!empty($student['time_in'])): ?>
                                     <span class="status-badge status-partial"><i class="fas fa-clock"></i> In Progress</span>
-                                <?php else: ?>
+                                <?php elseif ($current_event_id > 0): ?>
                                     <span class="status-badge status-absent"><i class="fas fa-times"></i> Absent</span>
+                                <?php else: ?>
+                                    <span class="status-badge status-no-event">—</span>
                                 <?php endif; ?>
                             </td>
                         </tr>
@@ -331,7 +358,10 @@
         </div>
     </div>
 
-</div><div class="modal fade" id="markAllInModal" tabindex="-1" aria-labelledby="markAllInLabel" aria-hidden="true">
+</div>
+
+<?php if ($current_event_id > 0): ?>
+<div class="modal fade" id="markAllInModal" tabindex="-1" aria-labelledby="markAllInLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <form action="<?= base_url('admin/mark_all_present') ?>" method="POST">
@@ -378,6 +408,7 @@
     </div>
   </div>
 </div>
+<?php endif; ?>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
