@@ -250,7 +250,7 @@
     <!-- Page header -->
     <div class="page-header">
         <div class="page-header-left">
-            <h1 class="page-title">Student Profiles</h1>
+            <h1 class="page-title">Student Profile</h1>
             <p class="page-sub">Viewing details for <?= esc($student['full_name']) ?></p>
         </div>
         <div class="page-header-right">
