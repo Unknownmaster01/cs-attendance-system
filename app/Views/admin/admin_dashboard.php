@@ -541,7 +541,7 @@
                             </div>
                         </div>
                         <button type="submit" class="btn-warning-ojt">
-                            <i class="fas fa-paper-plane"></i> Post Announcements
+                            <i class="fas fa-paper-plane"></i> Post Announcement
                         </button>
                     </form>
                 </div>
