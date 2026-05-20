@@ -292,7 +292,7 @@
                     <div class="profile-meta">
                         <div class="meta-chip"><i class="fas fa-graduation-cap"></i><?= esc($student['course']) ?></div>
                         <div class="meta-chip"><i class="fas fa-layer-group"></i>Year <?= esc($student['year_level_id']) ?></div>
-                        <div class="meta-chip"><i class="fas fa-tag"></i>Students</div>
+                        <div class="meta-chip"><i class="fas fa-tag"></i>Student</div>
                     </div>
                 </div>
                 <div class="profile-actions">
